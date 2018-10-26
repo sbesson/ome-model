@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06
+                         http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Experiment ID="Experiment:0" Name="Mock experiment"/>
+  <Image ID="Image:0" Name="Experiment sample">
+    <AcquisitionDate>2018-10-26T11:19:90</AcquisitionDate>
+    <Description>This image is linked to an experiemnt</Description>
+    <ExperimentRef ID="Experiment:0"/>
+    <Pixels DimensionOrder="XYCZT" ID="Pixels:0:0" Type="uint8" SizeC="1" SizeT="1" SizeX="6" SizeY="4" SizeZ="1">
+      <BinData BigEndian="false" Length="32"
+                   >/wCrzur//wB5oMPi/wBIbJO3AP8ePGCF</BinData>
+    </Pixels>
+  </Image>
+</OME>
