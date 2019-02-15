@@ -1,31 +1,52 @@
-# Contributing to Bio-Formats
+# Contributing to the OME Model
+
+The OME Model is licensed under the
+[2-clause BSD license](https://opensource.org/licenses/BSD-2-Clause) and
+accepts contributions via GitHub pull requests. This document outlines some of
+the conventions on development workflow, commit message formatting, contact
+points and other resources to make it easier to get your contribution accepted.
 
 Guidance for contributing to OME projects in general can be found at
 https://docs.openmicroscopy.org/contributing/
 
-Developer documentation specifically for Bio-Formats is at
-https://docs.openmicroscopy.org/latest/bio-formats/developers/
+## Certificate of Origin
 
-The README file gives instructions for testing your code before opening a PR,
-please ensure you read these.
+By contributing to this project you agree to the
+[Developer Certificate of Origin](https://developercertificate.org/) (DCO).
+This document was created by the Linux Kernel community and is a simple
+statement that you, as a contributor, have the legal right to make the
+contribution. See the [DCO](DCO) file for details.
 
-## The Quick Version
+## Making a change
 
-* Fork the GitHub repository.
-* Create a branch for your work based on the latest `dev_x` e.g. dev_5_0 or
-  `develop` branch. Unless you are targeting a specific release, it is
-  best to default to working against `develop`.
+Before making any significant changes, please
+[open an issue](http://github.com/ome/ome-model/issues/).
+
+* Fork the GitHub repository and create a branch for your work.
 * Make your commits, test your changes locally as per the README, and open a
   PR.
 * Make sure you include details of the problem you are fixing and how to test
   your changes.
-* We may need you to submit some test data
-  [via our QA system](http://qa.openmicroscopy.org.uk/qa/upload/). If the
-  files are particularly large (> ~2 GB), contact the
-  [mailing list](https://www.openmicroscopy.org/support/)
-  and we will get back to you with secure upload details.
 
-## External Contributors
+## Sign your work
+
+The sign-off is a simple line at the end of the explanation for the patch, 
+which certifies that you wrote it or otherwise have the right to pass it on as
+an open-source patch. If you can certify the [DCO](DCO), add a line to every
+Fit commit message:
+
+    Signed-off-by: Joe Smith <joe@gmail.com>
+
+using your real name and institutional address.
+
+You can add the sign off when creating the git commit via `git commit -s`.
+
+If you want this to be automatic you can set up some aliases:
+
+    git config --add alias.amend "commit -s --amend"
+    git config --add alias.c "commit -s"
+
+## Review process
 
 * PRs submitted from outside OME will get an initial review to identify if
   they are suitable to pass into our continuous integration system for
@@ -47,15 +68,3 @@ please ensure you read these.
 * The PR will be merged once all the builds are green with the "include" label
   added.
 
-## Contributing to Bio-Formats Documentation
-
-The documentation hosted at
-https://docs.openmicroscopy.org/latest/bio-formats/ is built from the
-`/docs/sphinx/` directory. Contributions are welcome but please follow the
-style guidance from the
-[OME Documentation Repository README](https://github.com/openmicroscopy/ome-documentation/blob/develop/README.rst#conventions-used).
-
-Documentation for new supported formats is auto-generated so it is best to
-contact the [mailing list](https://www.openmicroscopy.org/support/)
-before embarking on such a change, or submit your new reader code and let one
-of the main OME team deal with the documentation for you.
