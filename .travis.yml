@@ -1,5 +1,7 @@
 ---
 os: linux
+dist: bionic
+language: java
 
 cache:
   directories:
@@ -30,8 +32,3 @@ jobs:
       script:
         - ulimit -n 4096
         - tox -e py36
-
-matrix:
-  fast_finish: true
-
-
