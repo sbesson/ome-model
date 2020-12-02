@@ -1,9 +1,7 @@
-# Builds using maven
-
 ---
 name: Maven
 
-on: 
+on:
   push:
   pull_request:
   schedule:
@@ -15,13 +13,16 @@ jobs:
       matrix:
         java: [1.8, 11]
         os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.6', '3.7', '3.8']
     runs-on: ${{ matrix.os }}
+    env:
+      maven_commands: install
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -37,4 +38,4 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Build
-        run: mvn install
+        run: mvn ${{ env.maven_commands }}
